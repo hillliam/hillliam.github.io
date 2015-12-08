@@ -1,172 +1,174 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Liam Hill site</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Liam Hill site</title>
 
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".dropdown, .btn-group").hover(function () {
+                    var dropdownMenu = $(this).children(".dropdown-menu");
+                    if (dropdownMenu.is(":visible")) {
+                        dropdownMenu.toggleClass("open");
+                    }
+                });
+            });
+        </script>
+        <style>
+            .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
+            canvas.emscripten { border: 0px none; }
+            .bs-example{
+                margin: 20px;
+            }
+            @media screen and (min-width: 768px) {
+                .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+                    display: block;
+                }
+                .dropdown-menu{
+                    margin-top: 0;
+                }
+                .dropdown-toggle{
+                    margin-bottom: 2px;
+                }
+                .navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
+                    margin-bottom: 0;
+                }
+            }
+        </style>
+    </head>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$(".dropdown, .btn-group").hover(function(){
-		var dropdownMenu = $(this).children(".dropdown-menu");
-		if(dropdownMenu.is(":visible")){
-			dropdownMenu.toggleClass("open");
-		}
-	});
-});		
-</script>
-<style>
-	.emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
-	canvas.emscripten { border: 0px none; }
-.bs-example{
-	margin: 20px;
-}
-@media screen and (min-width: 768px) {
-  .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
-		display: block;
-	}
-	.dropdown-menu{
-		margin-top: 0;
-	}
-	.dropdown-toggle{
-		margin-bottom: 2px;
-	}
-	.navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
-		margin-bottom: 0;
-	}
-}
-</style>
-</head>
+    <body>
+        <section>
 
-<body>
-<section>
-
-<nav style="margin-left:auto;margin-right:auto;">
-  <div class="jumbotron text-center clearfix">
-    <div class="container dropdown">
-    	<a href="index.html" class="btn btn-lg btn-primary">home</a>
-    	<a href="projects.html" class="btn btn-lg btn-info dropdown-toggle">projects</a>
-        <ul class="dropdown-menu" >
-        <li> 
-        <a href="http://hillliam.github.io/mazeweb" class="btn btn-lg btn-success">Mazeweb</a> 
-        </li>
-        <li>
-        <a href="http://hillliam.github.io/zombiegame" class="btn btn-lg btn-warning">Zombiegame</a>
-        </li>
-        </ul>
-    </div>
-  </div>
-  </nav>
-</section>
-<section>
-<div>
-	<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas> <!-- will contain the 3d name -->
-</div>
-</section>
-<hr>
-<section>
-  <div class="container">
-    <div class="row dropdown bg-info">
-      <div class="col-lg-12 text-center dropdown-toggle">
-        <h1>mazeweb</h1>
-      </div>
-      <div class="col-lg-12 text-center dropdown-menu">
-        <p>mazeweb</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row dropdown bg-primary">
-      <div class="col-lg-12 text-center dropdown-toggle">
-        <h1>mazeapp</h1>
-      </div>
-      <div class="col-lg-12 text-center dropdown-menu">
-        <p>mazeapp</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row dropdown bg-success">
-      <div class="col-lg-12 text-center dropdown-toggle">
-        <h1>zombiegame</h1>
-      </div>
-      <div class="col-lg-12 text-center dropdown-menu">
-        <p>zombiegame</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row dropdown bg-warning">
-      <div class="col-lg-12 text-center dropdown-toggle">
-        <h1>Car Park Simulator</h1>
-      </div>
-      <div class="col-lg-12 text-center dropdown-menu">
-        <p>Car Park Simulator</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row dropdown bg-danger">
-      <div class="col-lg-12 text-center dropdown-toggle">
-        <h1>mazedroid</h1>
-      </div>
-      <div class="col-lg-12 text-center dropdown-menu">
-        <p>mazedroid</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row dropdown bg-info">
-      <div class="col-lg-12 text-center dropdown-toggle">
-        <h1>gradeapp</h1>
-      </div>
-      <div class="col-lg-12 text-center dropdown-menu">
-        <p>gradeapp</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="row dropdown bg-primary">
-      <div class="col-lg-12 text-center dropdown-toggle">
-        <h1>connect 4</h1>
-      </div>
-      <div class="col-lg-12 text-center dropdown-menu">
-        <p>connect 4</p>
-      </div>
-    </div>
-  </div>
-</section>
-<hr>
-<footer class="text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p>Copyright © Liam Hill. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-</footer>
-</body>
+            <nav style="margin-left:auto;margin-right:auto;">
+                <div class="jumbotron text-center clearfix">
+                    <div class="container">
+                        <a href="index.html" class="btn grow btn-lg btn-primary">home</a>
+                        <span class="dropdown" style=" ">
+                            <a href="projects.html" class="btn grow btn-lg btn-info dropdown dropdown-toggle">projects</a>
+                            <ul class="dropdown-menu" >
+                                <li> 
+                                    <a href="http://hillliam.github.io/mazeweb" class="btn grow btn-lg btn-success">Mazeweb</a> 
+                                </li>
+                                <li>
+                                    <a href="http://hillliam.github.io/zombiegame" class="btn grow btn-lg btn-warning">Zombiegame</a>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <section>
+            <div>
+                <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas> <!-- will contain the 3d name -->
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div class="container">
+                <div class="row dropdown bg-info">
+                    <div class="col-lg-12 text-center dropdown-toggle">
+                        <h1>mazeweb</h1>
+                    </div>
+                    <div class="col-lg-12 text-center dropdown-menu">
+                        <p>mazeweb</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row dropdown bg-primary">
+                    <div class="col-lg-12 text-center dropdown-toggle">
+                        <h1>mazeapp</h1>
+                    </div>
+                    <div class="col-lg-12 text-center dropdown-menu">
+                        <p>mazeapp</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row dropdown bg-success">
+                    <div class="col-lg-12 text-center dropdown-toggle">
+                        <h1>zombiegame</h1>
+                    </div>
+                    <div class="col-lg-12 text-center dropdown-menu">
+                        <p>zombiegame</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row dropdown bg-warning">
+                    <div class="col-lg-12 text-center dropdown-toggle">
+                        <h1>Car Park Simulator</h1>
+                    </div>
+                    <div class="col-lg-12 text-center dropdown-menu">
+                        <p>Car Park Simulator</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row dropdown bg-danger">
+                    <div class="col-lg-12 text-center dropdown-toggle">
+                        <h1>mazedroid</h1>
+                    </div>
+                    <div class="col-lg-12 text-center dropdown-menu">
+                        <p>mazedroid</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row dropdown bg-info">
+                    <div class="col-lg-12 text-center dropdown-toggle">
+                        <h1>gradeapp</h1>
+                    </div>
+                    <div class="col-lg-12 text-center dropdown-menu">
+                        <p>gradeapp</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row dropdown bg-primary">
+                    <div class="col-lg-12 text-center dropdown-toggle">
+                        <h1>connect 4</h1>
+                    </div>
+                    <div class="col-lg-12 text-center dropdown-menu">
+                        <p>connect 4</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <footer class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>Copyright © Liam Hill. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>

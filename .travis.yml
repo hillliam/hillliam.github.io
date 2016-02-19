@@ -1,0 +1,9 @@
+language: ruby
+
+sudo: required
+
+before_install:
+  - gem install htmlproof
+
+script:
+  - htmlproof . --check-html

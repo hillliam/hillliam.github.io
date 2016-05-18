@@ -3,7 +3,7 @@ language: ruby
 sudo: required
 
 before_install:
-  - gem install htmlproof
+  - gem install html-proofer
 
 script:
-  - htmlproof . --check-html
+  - htmlproofer . --check-html
